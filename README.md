@@ -74,7 +74,7 @@ Advanced syntax is implemented for the following commands:
 Usage: create <class_name>
 ```
 (hbnb) create BaseModel
-```
+``
 ```
 (hbnb) create BaseModel
 3aa5babc-efb6-4041-bfe9-3cc9727588f8
