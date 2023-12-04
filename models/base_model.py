@@ -3,6 +3,8 @@
 import uuid
 from datetime import datetime
 
+Base = declarative_base()
+
 
 class BaseModel:
     """A base class for all hbnb models"""
@@ -14,6 +16,15 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
+            
+            if 'id' not in kwargs:
+                self.id = str(uuid4())
+
+            if 'created_at' not in kwargs:
+                self.created_at = datetime.now()
+
+            if 'updated_at' not in kwargs:
+                self.updated_at = datetime.now()
         else:
             kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
                                                      '%Y-%m-%dT%H:%M:%S.%f')
