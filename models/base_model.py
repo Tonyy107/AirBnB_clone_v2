@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module defines a base class for all models in our hbnb clone"""
-import uuid
+import uuid import uuid4
 from datetime import datetime
 
 Base = declarative_base()
@@ -16,7 +16,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
-            
+
             if 'id' not in kwargs:
                 self.id = str(uuid4())
 
